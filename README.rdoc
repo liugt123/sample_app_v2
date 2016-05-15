@@ -1,0 +1,5 @@
+Ruby on Rails : sample_app
+
+this is a sample app
+used to practice
+by Lancelot
