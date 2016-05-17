@@ -7,6 +7,11 @@ class UsersControllerTest < ActionController::TestCase
   	@other_user = users(:archer)
   end
 
+  test "should redirect index when not logged in" do
+  	get :index
+  	assert_redirectd_to login_url
+  end
+
   test "should get new" do
     get :new
     assert_response :success
@@ -27,7 +32,7 @@ class UsersControllerTest < ActionController::TestCase
   	get :edit, id: @user
   	assert_redirectd_to root_url
   end
-  
+
 
   test "should redirect update when logged in as wrong user" do
   	log_in_as(@other_user)
