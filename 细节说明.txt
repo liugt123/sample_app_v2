@@ -11,6 +11,11 @@ Rails用它来抵御“跨站请求伪造”（CSRF）攻击
 	2. app/models/microposts.rb
 }
 
+显示为微博的部分是{
+	1. db/seeds.rb     Pdf 424/512   
+	
+}
+
 
 
 ATTENTION:
