@@ -6,6 +6,10 @@ Rails用它来抵御“跨站请求伪造”（CSRF）攻击
 
 10.1.2 中注册新账户之后的激活账户的邮件在开发环境中并不会正真的发送，但是可以在Rails Server中查看到发送日志
 
+表现出不能超过140字的要求的部分是{
+	1. test/models/micropost_test.rb
+	2. app/models/microposts.rb
+}
 
 
 
