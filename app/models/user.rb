@@ -59,6 +59,17 @@ class User < ActiveRecord::Base
 		reset_sent_at < 2.hours.ago
 	end
 
+	# 实现动态流原型
+	def feed
+		Micropost.where("user_id = ?", id)
+	end
+
+
+
+
+
+
+
 	private
 		#把电子邮件地址转换为小写
 		def downcase_email
@@ -72,3 +83,20 @@ class User < ActiveRecord::Base
 		end
 
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
