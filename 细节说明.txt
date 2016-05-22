@@ -15,6 +15,7 @@ Rails用它来抵御“跨站请求伪造”（CSRF）攻击
 	1. db/seeds.rb     Pdf 424/512 
 	2. app/views/shared/_user_info.html.erb && _micropost_form.html.erb  
 	3. app/views/static_pages/home.html.erb   line 12
+	4. app/views/users/show_follower.html.erb  line 8
 }
 
 
