@@ -63,9 +63,13 @@ class User < ActiveRecord::Base
 		reset_sent_at < 2.hours.ago
 	end
 
-	# 实现动态流原型
+	# 返回用户的动态流
 	def feed
-		Micropost.where("user_id = ?", id)
+		#1. Micropost.where( "user_id in (?) OR user_id = ?", following_ids, id)
+		# 2. Micropost.where("user_id IN (:following_ids) OR user_id = :user_id",
+		# 	following_ids: following_ids, user_id: user)
+		following_ids = "SELECT followed_id FROM relationships WHERE follower_id = :user_id"
+		Micropost.where("user_id IN (#{following_ids}) OR user_id = :user_id", user_id: id)
 	end
 
 	# 关注另一个用户
